@@ -8,16 +8,32 @@
             <web-module-libraries/>
             <web-module-additional-libraries>
                 <library>
-                    <file>${reference.roomi2-war.dist-ear}</file>
+                    <file>${reference.Roomie-Enterprise-war.dist-ear}</file>
                     <path-in-war>/</path-in-war>
                 </library>
                 <library>
-                    <file>${reference.roomi2-ejb.dist-ear}</file>
+                    <file>${reference.Roomie-Enterprise-ejb.dist}</file>
                     <path-in-war>/</path-in-war>
                 </library>
             </web-module-additional-libraries>
         </data>
         <references xmlns="http://www.netbeans.org/ns/ant-project-references/1">
+            <reference>
+                <foreign-project>Roomie-Enterprise-ejb</foreign-project>
+                <artifact-type>jar</artifact-type>
+                <script>build.xml</script>
+                <target>dist</target>
+                <clean-target>clean</clean-target>
+                <id>dist</id>
+            </reference>
+            <reference>
+                <foreign-project>Roomie-Enterprise-war</foreign-project>
+                <artifact-type>j2ee_ear_archive</artifact-type>
+                <script>build.xml</script>
+                <target>dist-ear</target>
+                <clean-target>clean-ear</clean-target>
+                <id>dist-ear</id>
+            </reference>
             <reference>
                 <foreign-project>roomi2-ejb</foreign-project>
                 <artifact-type>j2ee_ear_archive</artifact-type>
